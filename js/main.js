@@ -32,6 +32,37 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
   
       contenedor.appendChild(tarjeta);
-    });
+      });
+  });
+  // Mostrar productos por categoría si estamos en producto.html
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const categoria = params.get("categoria");
+  
+    if (categoria && document.getElementById("contenedorProductos")) {
+      document.getElementById("tituloCategoria").textContent = `Productos de ${categoria}`;
+      
+      const productos = productosPorCategoria[categoria];
+      const contenedor = document.getElementById("contenedorProductos");
+  
+      if (productos) {
+        productos.forEach(producto => {
+          const card = document.createElement("div");
+          card.classList.add("col-md-4", "mb-4");
+          card.innerHTML = `
+            <div class="card h-100">
+              <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+              <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <p class="card-text">${producto.descripcion}</p>
+              </div>
+            </div>
+          `;
+          contenedor.appendChild(card);
+        });
+      } else {
+        contenedor.innerHTML = `<p class="text-center">No hay productos disponibles para esta categoría.</p>`;
+      }
+    }
   });
   
