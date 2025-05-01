@@ -1,27 +1,21 @@
-// Simulación de productos por categoría
-const productosPorCategoria = {
-    "Joyería Artesanal": [
+const categorias = [
+    { nombre: "Pintura", descripcion: "Obras al óleo y acuarela" },
+    { nombre: "Escultura", descripcion: "Modelados en barro y piedra" }
+  ];
+  
+  const productosPorCategoria = {
+    "Pintura": [
       {
-        nombre: "Collar de Cuarzo Rosa",
-        descripcion: "Hecho a mano con piedras naturales.",
-        imagen: "https://images.unsplash.com/photo-1589987601635-57184b6bdda6"
-      },
-      {
-        nombre: "Aretes de Plata 925",
-        descripcion: "Diseño único y elegante.",
-        imagen: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2"
+        nombre: "Paisaje Andino",
+        descripcion: "Óleo sobre lienzo de un paisaje montañoso.",
+        imagen: "img/pintura1.jpg"
       }
     ],
-    "Tejidos": [
+    "Escultura": [
       {
-        nombre: "Bufanda multicolor",
-        descripcion: "Confeccionada con lana reciclada.",
-        imagen: "https://images.unsplash.com/photo-1607330289193-4d7682a8b0c7"
-      },
-      {
-        nombre: "Gorro artesanal",
-        descripcion: "Hecho en crochet con diseño tradicional.",
-        imagen: "https://images.unsplash.com/photo-1610546425842-4ec24d9327b5"
+        nombre: "Figura clásica",
+        descripcion: "Escultura de mármol con detalles clásicos.",
+        imagen: "img/escultura1.jpg"
       }
     ]
   };
