@@ -1,17 +1,49 @@
+/* General */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f8f8;
-  }
-  
-  h1, h2 {
-    font-weight: bold;
-  }
-  
-  .card {
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Encabezado */
+header {
+  background-image: linear-gradient(to right, #343a40, #495057);
+  color: white;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+/* Tarjetas de producto y categoría */
+.card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+}
+
+/* Botón personalizado */
+.btn-art {
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+}
+
+.btn-art:hover {
+  background-color: #5936a2;
+}
