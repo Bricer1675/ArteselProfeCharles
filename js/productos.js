@@ -1,22 +1,36 @@
+// Lista de categorías
 const categorias = [
-    { nombre: "Pintura", descripcion: "Obras al óleo y acuarela" },
-    { nombre: "Escultura", descripcion: "Modelados en barro y piedra" }
-  ];
-  
-  const productosPorCategoria = {
-    "Pintura": [
-      {
-        nombre: "Paisaje Andino",
-        descripcion: "Óleo sobre lienzo de un paisaje montañoso.",
-        imagen: "img/pintura1.jpg"
-      }
-    ],
-    "Escultura": [
-      {
-        nombre: "Figura clásica",
-        descripcion: "Escultura de mármol con detalles clásicos.",
-        imagen: "img/escultura1.jpg"
-      }
-    ]
-  };
-  
+  { nombre: "Pinturas", imagen: "img/pintura1.jpg" },
+  { nombre: "Esculturas", imagen: "img/pintura1.jpg" }, // Usa otra imagen si tienes
+  { nombre: "Fotografías", imagen: "img/pintura1.jpg" }
+];
+
+// Productos por categoría
+const productosPorCategoria = {
+  Pinturas: [
+    {
+      nombre: "Atardecer en el Campo",
+      descripcion: "Obra al óleo con inspiración rural.",
+      imagen: "img/pintura1.jpg"
+    },
+    {
+      nombre: "La ciudad dormida",
+      descripcion: "Acrílico sobre lienzo representando una noche urbana.",
+      imagen: "img/pintura1.jpg"
+    }
+  ],
+  Esculturas: [
+    {
+      nombre: "Figura Abstracta",
+      descripcion: "Escultura en hierro reciclado.",
+      imagen: "img/pintura1.jpg"
+    }
+  ],
+  Fotografías: [
+    {
+      nombre: "Paisaje Andino",
+      descripcion: "Fotografía tomada en el Parque Nacional Natural.",
+      imagen: "img/pintura1.jpg"
+    }
+  ]
+};
