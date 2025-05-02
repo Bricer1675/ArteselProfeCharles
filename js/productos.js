@@ -1,36 +1,41 @@
-// Lista de categorías
 const categorias = [
-  { nombre: "Pinturas", imagen: "img/pintura1.jpg" },
-  { nombre: "Esculturas", imagen: "img/pintura1.jpg" }, // Usa otra imagen si tienes
-  { nombre: "Fotografías", imagen: "img/pintura1.jpg" }
+  {
+    nombre: "Pinturas",
+    imagen: "img/pintura1.jpg"
+  },
+  {
+    nombre: "Esculturas",
+    imagen: "img/escultura1.jpg"
+  },
+  {
+    nombre: "Fotografías",
+    imagen: "img/foto1.jpg"
+  }
 ];
 
-// Productos por categoría
-const productosPorCategoria = {
-  Pinturas: [
-    {
-      nombre: "Atardecer en el Campo",
-      descripcion: "Obra al óleo con inspiración rural.",
-      imagen: "img/pintura1.jpg"
-    },
-    {
-      nombre: "La ciudad dormida",
-      descripcion: "Acrílico sobre lienzo representando una noche urbana.",
-      imagen: "img/pintura1.jpg"
-    }
-  ],
-  Esculturas: [
-    {
-      nombre: "Figura Abstracta",
-      descripcion: "Escultura en hierro reciclado.",
-      imagen: "img/pintura1.jpg"
-    }
-  ],
-  Fotografías: [
-    {
-      nombre: "Paisaje Andino",
-      descripcion: "Fotografía tomada en el Parque Nacional Natural.",
-      imagen: "img/pintura1.jpg"
-    }
-  ]
-};
+const productos = [
+  {
+    nombre: "Atardecer en el Campo",
+    categoria: "Pinturas",
+    precio: 200,
+    imagen: "img/pintura1.jpg"
+  },
+  {
+    nombre: "La ciudad dormida",
+    categoria: "Pinturas",
+    precio: 250,
+    imagen: "img/pintura2.jpg"
+  },
+  {
+    nombre: "Figura Abstracta",
+    categoria: "Esculturas",
+    precio: 500,
+    imagen: "img/escultura1.jpg"
+  },
+  {
+    nombre: "Paisaje Andino",
+    categoria: "Fotografías",
+    precio: 300,
+    imagen: "img/foto1.jpg"
+  }
+];

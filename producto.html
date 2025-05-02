@@ -3,42 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Productos por Categoría</title>
+  <title>Productos - Galería del Profe Charles</title>
 
   <!-- Bootstrap CSS -->
-  <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
-    rel="stylesheet"
-  />
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="bg-primary text-white p-3">
+  <header class="bg-dark text-white p-3">
     <div class="container">
-      <h1 class="text-center" id="tituloCategoria">Productos</h1>
+      <h1 class="text-center">Productos de la Galería</h1>
     </div>
   </header>
 
   <main class="container my-4">
-    <div class="row" id="contenedorProductos">
-      <!-- Aquí se insertarán los productos dinámicamente -->
+    <h2 class="text-center mb-4" id="tituloCategoria">Productos</h2>
+    <div id="contenedorProductos" class="row">
+      <!-- Aquí se cargarán los productos dinámicamente -->
     </div>
   </main>
 
   <footer class="bg-dark text-white text-center py-3">
-    <p>© 2025 Profe Charles. Galería de Arte</p>
+    <p>© 2025 Profe Charles. Todos los derechos reservados.</p>
   </footer>
 
   <!-- Bootstrap JS y dependencias -->
-  <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-  </script>
-
-  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Productos y lógica -->
   <script src="js/productos.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoria = urlParams.get('categoria');
+
+    const contenedor = document.getElementById("contenedorProductos");
+    const tituloCategoria = document.getElementById("tituloCategoria");
+
+    if (categoria) {
+      tituloCategoria.textContent = `Productos de la categoría: ${categoria}`;
+      const productosFiltrados = productos.filter(p => p.categoria === categoria);
+
+      if (productosFiltrados.length === 0) {
+        contenedor.innerHTML = "<p class='text-center'>No hay productos en esta categoría.</p>";
+      } else {
+        productosFiltrados.forEach(producto => {
+          const tarjeta = document.createElement("div");
+          tarjeta.className = "col-md-4 mb-4";
+          tarjeta.innerHTML = `
+            <div class="card h-100">
+              <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}" />
+              <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <p class="card-text">Precio: $${producto.precio}</p>
+              </div>
+            </div>
+          `;
+          contenedor.appendChild(tarjeta);
+        });
+      }
+    } else {
+      tituloCategoria.textContent = "Categoría no especificada";
+    }
+  </script>
 </body>
 </html>
 
